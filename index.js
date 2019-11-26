@@ -48,16 +48,13 @@ app.get('/insert', (req, res) => {
     }
 
     //push data
-    tempData.push({"Project Name": getParameterByName("project", req.url)})
-
-    tempData.push({"Asset Number": getParameterByName("assetnumber", req.url)})
-
-    tempData.push({"Progress Status": getParameterByName("progressstatus", req.url)})
-
-    tempData.push({"Inspection By": getParameterByName("inspectionby", req.url)})
-
-    tempData.push({"Inspection Date": getParameterByName("inspectiondate", req.url)})
-
+    tempData.push({
+        "Project Name": getParameterByName("project", req.url),
+        "Asset Number": getParameterByName("assetnumber", req.url),
+        "Progress Status": getParameterByName("progressstatus", req.url),
+        "Inspection By": getParameterByName("inspectionby", req.url),
+        "Inspection Date": getParameterByName("inspectiondate", req.url)
+    })
 
     //store
     jsonContent.inspection = tempData
