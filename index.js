@@ -9,6 +9,9 @@ app.get('/', function (req, res) {
 
 //ex: http://localhost:5001/database
 app.get('/database', function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+
     var contents = fs.readFileSync("db.json");
   
     var jsonContent = JSON.parse(contents);
@@ -31,6 +34,9 @@ app.get('/database', function (req, res) {
 
 //ex: http://localhost:5001/insert?id={value}
 app.get('/insert', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+
     var contents = fs.readFileSync("db.json");
 
     var jsonContent = JSON.parse(contents);
