@@ -68,6 +68,24 @@ app.get('/insert', (req, res) => {
     res.send("done");
     })
 
+    //ex: http://localhost:5001/delete
+app.get('/delete', function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+
+
+    var back_contents = fs.readFileSync("jj.json");
+  
+    var jsonContent = JSON.parse(back_contents);
+    let data = JSON.stringify(jsonContent);
+
+
+    fs.writeFileSync('db.json', data);
+
+  
+    res.send("clean");
+    });
+
 const PORT = process.env.PORT || 5001;
 
 var server = app.listen(PORT, function () {
