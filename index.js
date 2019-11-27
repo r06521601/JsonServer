@@ -51,6 +51,7 @@ app.get('/insert', (req, res) => {
     tempData.push({
         "Project Name": getParameterByName("project", req.url),
         "Asset Number": getParameterByName("assetnumber", req.url),
+        "Inspection Name": "Final Inspection",
         "Progress Status": getParameterByName("progressstatus", req.url),
         "Inspection By": getParameterByName("inspectionby", req.url),
         "Inspection Date": getParameterByName("inspectiondate", req.url)
