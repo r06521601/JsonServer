@@ -101,7 +101,7 @@ app.post('/insert', (req, res) => {
 //// API Progress
 //////////////////////////////////////////////////////////
 
-//ex: http://localhost:5001/progress
+//ex: https://crcpjsondb.herokuapp.com/progress
 //Description: get progress status data
 //Method: GET
 //formdata:{
@@ -126,7 +126,7 @@ app.get('/progress', function (req, res) {
     res.send(jsonContent);
     });
 
-//ex: http://localhost:5001/progress
+//ex: https://crcpjsondb.herokuapp.com/progress
 //Description: insert progress status data
 //Method: POST
 //formdata:{
@@ -180,7 +180,7 @@ app.post('/progress', (req, res) => {
 //// API Inspection
 //////////////////////////////////////////////////////////
 
-//ex: http://localhost:5001/inspection
+//ex: https://crcpjsondb.herokuapp.com/inspection
 //Description: get inspection data
 //Method: GET
 //formdata:{
@@ -205,7 +205,7 @@ app.get('/inspection', function (req, res) {
     res.send(jsonContent);
     });
 
-//ex: http://localhost:5001/inspection
+//ex: https://crcpjsondb.herokuapp.com/inspection
 //Description: insert inspection data
 //Method: POST
 //formdata:{
