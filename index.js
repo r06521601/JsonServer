@@ -107,7 +107,7 @@ app.post('/insert', (req, res) => {
 //formdata:{
     // Project:Latrobe
     // AssetNumber:T3-003
-    // InspectionBy:jun wang
+    // CheckedBy:jun wang
     // InspectionDate:03/10/2019 10:55:10
     // ProgressStatus:[0,1,0,0,0,0,0,0,0,0,1,0,0,0........]
 // }
@@ -132,7 +132,7 @@ app.get('/progress', function (req, res) {
 //formdata:{
     // Project:Latrobe
     // AssetNumber:T3-003
-    // InspectionBy:jun wang
+    // CheckedBy:jun wang
     // InspectionDate:03/10/2019 10:55:10
     // ProgressStatus:[0,1,0,0,0,0,0,0,0,0,1,0,0,0........]
 // }
@@ -157,7 +157,7 @@ app.post('/progress', (req, res) => {
             "Project": req.body.Project,
             "Asset Number": req.body.AssetNumber,
             "Progress Status": req.body.ProgressStatus,
-            "Inspection By": req.body.InspectionBy,
+            "Checked By": req.body.CheckedBy,
             "Inspection Date": req.body.InspectionDate
         })
 
@@ -186,7 +186,7 @@ app.post('/progress', (req, res) => {
 //formdata:{
     // Project:Latrobe
     // AssetNumber:T3-003
-    // InspectionBy:jun wang
+    // CheckedBy:jun wang
     // InspectionDate:03/10/2019 10:55:10
     // FinalInspection:[[0, comment0],[1,comment1],[0,comment2]......]
     // files:[file1, file2, file3......]
@@ -211,7 +211,7 @@ app.get('/inspection', function (req, res) {
 //formdata:{
     // Project:Latrobe
     // AssetNumber:T3-003
-    // InspectionBy:jun wang
+    // CheckedBy:jun wang
     // InspectionDate:03/10/2019 10:55:10
     // FinalInspection:[[0, comment0],[1,comment1],[0,comment2]......]
     // files:[file1, file2, file3......]
@@ -250,7 +250,7 @@ app.post('/inspection', (req, res) => {
             "Project": req.body.Project,
             "Asset Number": req.body.AssetNumber,
             "Files": FilestempData,
-            "Inspection By": req.body.InspectionBy,
+            "Checked By": req.body.CheckedBy,
             "Inspection Date": req.body.InspectionDate,
             "FinalInspection":req.body.FinalInspection
         })

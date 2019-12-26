@@ -15,7 +15,7 @@ ex: https://crcpjsondb.herokuapp.com/progress
 formdata:{
     Project:Latrobe
     AssetNumber:T3-003
-    InspectionBy:jun wang
+    CheckedBy:jun wang
     InspectionDate:03/10/2019 10:55:10
     ProgressStatus:[0,1,0,0,0,0,0,0,0,0,1,0,0,0........]
  }
@@ -36,7 +36,7 @@ ex: https://crcpjsondb.herokuapp.com/progress
 formdata:{
     Project:Latrobe
     AssetNumber:T3-003
-    InspectionBy:jun wang
+    CheckedBy:jun wang
     InspectionDate:03/10/2019 10:55:10
     ProgressStatus:[0,1,0,0,0,0,0,0,0,0,1,0,0,0........]
  }
@@ -59,7 +59,7 @@ ex: https://crcpjsondb.herokuapp.com/inspection
 formdata:{
     Project:Latrobe
     AssetNumber:T3-003
-    InspectionBy:jun wang
+    CheckedBy:jun wang
     InspectionDate:03/10/2019 10:55:10
     FinalInspection:[[0, comment0],[1,comment1],[0,comment2]......]
     files:[file1, file2, file3......]
@@ -77,7 +77,7 @@ ex: https://crcpjsondb.herokuapp.com/inspection
 formdata:{
     Project:Latrobe
     AssetNumber:T3-003
-    InspectionBy:jun wang
+    CheckedBy:jun wang
     InspectionDate:03/10/2019 10:55:10
     FinalInspection:[[0, comment0],[1,comment1],[0,comment2]......]
     files:[file1, file2, file3......]
