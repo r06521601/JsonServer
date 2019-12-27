@@ -224,6 +224,7 @@ app.post('/inspection', (req, res) => {
         console.log(req.files);//[file1, file2, file3......] -> req.files[0].filename
 
         if(err) {
+            console.log(err)
             return res.end("Error uploading file.");
         }
 
