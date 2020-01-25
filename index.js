@@ -130,11 +130,16 @@ app.get('/progress', function (req, res) {
 //Description: insert progress status data
 //Method: POST
 //formdata:{
-    // Project:Latrobe
-    // AssetNumber:T3-003
-    // CheckedBy:jun wang
-    // InspectionDate:03/10/2019 10:55:10
-    // ProgressStatus:[0,1,0,0,0,0,0,0,0,0,1,0,0,0........]
+    // "Project": LaTrobe,
+    // "Asset Number": T1-001,
+    // "Progress Status": 12,
+    // "Work Progress":G, //0, 25, 50, 75, 100, G
+    // "Checked By": Jun,
+    // "Inspection Date": 03/10/2019 10:55:10,
+    // "Double Task":[{
+    // "Progress Status": 12,
+    // "Work Progress":G, //0, 25, 50, 75, 100, G
+    // }]
 // }
 //Notice:ProgressStatus need 22 binary 
 
@@ -148,18 +153,38 @@ app.post('/progress', (req, res) => {
 
         var tempData = new Array()
 
+        //remove repeat data
         for ( var index=0; index<jsonContent.progress.length; index++ ) {
-            tempData.push(jsonContent.progress[index])
+            if(jsonContent.progress[index]['Project'] == req.body.Project && jsonContent.progress[index]['Asset Number'] == req.body.AssetNumber)
+            {
+                console.log('bye repeat guy')
+            }
+            else{
+                tempData.push(jsonContent.progress[index])
+            }
         }
+
 
         //push data
         tempData.push({
             "Project": req.body.Project,
             "Asset Number": req.body.AssetNumber,
             "Progress Status": req.body.ProgressStatus,
+            "Work Progress":req.body.WorkProgress,
             "Checked By": req.body.CheckedBy,
-            "Inspection Date": req.body.InspectionDate
+            "Inspection Date": req.body.InspectionDate,
         })
+        if(req.body.DoubleTask['ProgressStatus'])
+        {
+            tempData.push({
+                "Project": req.body.Project,
+                "Asset Number": req.body.AssetNumber,
+                "Progress Status": req.body.DoubleTask['ProgressStatus'],
+                "Work Progress":req.body.DoubleTask['WorkProgress'],
+                "Checked By": req.body.CheckedBy,
+                "Inspection Date": req.body.InspectionDate,
+            })
+        }
 
         //store
         jsonContent.progress = tempData
