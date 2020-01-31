@@ -186,6 +186,18 @@ app.post('/progress', (req, res) => {
             })
         }
 
+        if(req.body.ThreeTask['ProgressStatus'])
+        {
+            tempData.push({
+                "Project": req.body.Project,
+                "Asset Number": req.body.AssetNumber,
+                "Progress Status": req.body.ThreeTask['ProgressStatus'],
+                "Work Progress":req.body.ThreeTask['WorkProgress'],
+                "Checked By": req.body.CheckedBy,
+                "Inspection Date": req.body.InspectionDate,
+            })
+        }
+
         //store
         jsonContent.progress = tempData
 
